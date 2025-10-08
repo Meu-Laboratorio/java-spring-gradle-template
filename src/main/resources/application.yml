@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Demo
+  main:
+    banner-mode: off
+
+  # H2 Config
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    username: dev
+    password: dev
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      #http://localhost:{service-port}/h2-console
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - 'health'
+          - 'info'
+
+springdoc:
+  show-actuator: true
+  swagger-ui: #swagger URL: http://localhost:8080/swagger-ui/index.html
+    doc-expansion: none
+    tags-sorter: alpha
+
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  level:
+    '[org.springframework]': error
+    '[com.gusrubin.demo]': info
