@@ -6,12 +6,12 @@ Descrição curta sobre o projeto. Aplicação **Java Spring Boot** de propósit
 
 ## 🛠 Tecnologias
 
-- ☕ Java 21
-- 🌱 Spring Boot 3.x
+- ☕ Java 25
+- 🌱 Spring Boot 4.x.x
 - ⚙️ Gradle
 - 🧪 JUnit 5 / Mockito
 - 🐳 Docker (opcional)
-- 🗄 PostgreSQL/MySQL (opcional)
+- 🗄 H2 Database (opcional)
 
 ---
 
@@ -23,10 +23,11 @@ A aplicação segue o padrão hexagonal, separando:
 
 - **Domain**: Entidades, agregados e regras de negócio.
 - **Application**: Casos de uso e serviços de aplicação.
-- **Adapters**:
-    - **Inbound**: REST Controllers, GraphQL, CLI
-    - **Outbound**: Repositórios, integração com APIs externas
-- **Configuration**: Beans e configurações gerais do Spring  
+- **Infrastructure**:
+  - **Adapters**:
+      - **In**: REST Controllers, GraphQL, CLI
+      - **Out**: Repositórios, integração com APIs externas
+  - **Config**: Beans e configurações gerais do Spring  
 
 [Controllers / API] -> [Application / Services] -> [Domain / Entities]
 | ^
@@ -52,10 +53,11 @@ src/
 │ │ └── com/seuprojeto/
 │ │   ├── domain/ # 🧬 Entidades e regras de negócio
 │ │   ├── application/ # ⚙️ Casos de uso e serviços
-│ │   ├── adapters/
-│ │   │ ├── inbound/ # 🌐 Controllers, APIs
-│ │   │ └── outbound/ # 🔌 Repositórios, integrações externas
-│ │   └── configuration/ # ⚙️ Beans e configurações do Spring
+│ │   └── infrastructure/
+│ │     ├── adapters/
+│ │     │  ├── in/ # 🌐 Controllers, APIs
+│ │     │  └── out/ # 🔌 Repositórios, integrações externas
+│ │     └── config/ # ⚙️ Beans e configurações do Spring
 │ └── resources/ # 📁 Configurações, arquivos estáticos
 └── test/
 └── java/
