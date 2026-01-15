@@ -5,7 +5,6 @@
     displayName = "Feature One",
     type = OPEN,
     allowedDependencies = {"infrastructure"}
-
 )
 package com.gusrubin.demo.featureone;
 
