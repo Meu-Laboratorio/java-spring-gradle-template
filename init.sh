@@ -17,7 +17,7 @@ echo
 echo "Detecting template package..."
 
 # detect template package from first java file
-TEMPLATE_PACKAGE=$(grep -R "^package " src/main/java | head -n1 | sed 's/package //' | sed 's/;//')
+TEMPLATE_PACKAGE=$(grep -Rh "^package " src/main/java | head -n1 | sed 's/package //' | sed 's/;//')
 
 if [ -z "$TEMPLATE_PACKAGE" ]; then
   echo "Could not detect template package."
