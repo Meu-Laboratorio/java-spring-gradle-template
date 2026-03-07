@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: Demo
+    name: java-spring-gradle-template-app
   main:
     banner-mode: off
 

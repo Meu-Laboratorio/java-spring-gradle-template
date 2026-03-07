@@ -37,6 +37,9 @@ if [ -f settings.gradle ]; then
   sed -i "s/java-spring-gradle-template-app/$APP_NAME/g" settings.gradle
 fi
 
+# update application name on application.yml
+sed -i "s/java-spring-gradle-template-app/$APP_NAME/g" src/main/resources/application.yml
+
 # update README
 if [ -f README.md ]; then
   sed -i "s/java-spring-gradle-template-app/$APP_NAME/g" README.md
