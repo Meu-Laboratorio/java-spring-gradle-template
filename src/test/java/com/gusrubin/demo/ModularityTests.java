@@ -14,7 +14,7 @@ import org.springframework.modulith.docs.Documenter.DiagramOptions.DiagramStyle;
  */
 class ModularityTests {
 
-  ApplicationModules modules = ApplicationModules.of(DemoApplication.class);
+  ApplicationModules modules = ApplicationModules.of(Application.class);
 
   @Test
   void verifiesModularStructure() {

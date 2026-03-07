@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @author Gustavo Rubin
  */
 @SpringBootTest
-class DemoApplicationIntegrationTests {
+class ApplicationIntegrationTests {
 
   @Test
   void exampleTest() throws Exception {
